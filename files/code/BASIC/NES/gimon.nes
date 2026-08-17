@@ -1,0 +1,11 @@
+    LDA #$00        ; Load the value 0 into the Accumulator (Clear total)
+    LDX #$05        ; Load the value 5 into the X register (Our loop counter)
+
+LoopStart:
+    STX $00         ; Store X in Zero Page memory address $00
+    CLC             ; Clear the Carry Flag (Crucial before any addition!)
+    ADC $00         ; Add the value at address $00 to the Accumulator
+    DEX             ; Decrement X by 1 (Subtract 1 from our counter)
+    BNE LoopStart   ; Branch back to LoopStart if X is Not Equal to 0
+
+    STA $01         ; Loop complete! Store the final sum in address $01
