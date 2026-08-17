@@ -2,4 +2,23 @@ name: Gimon Gimon
 description: This is Gimon Gimon in gimon.yaml. What went wrong?
 title: *Gimon Gimon Bug Title*
 body:
-  - 
+  - type: input
+    attributes:
+        label: What went wrong?
+        description: Tell me a bug in the game. If there is no bug, go to the "What suggestion do you want to make?" label.
+   validations:
+     required: true
+ - type: input
+   attributes:
+     label: What suggestion do you want to make?
+     description: What suggestion do you want to make? If there is a bug, go to the "What went wrong?" label.
+    validations:
+      required: true
+ - type: checkboxes
+   attributes:
+     label: I agree to the following
+     description: Do you agree to the following?
+       - label: There is no bug
+         required: true
+      - label: There is a bug
+         required: true
